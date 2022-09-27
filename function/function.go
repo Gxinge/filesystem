@@ -68,7 +68,8 @@ func Delete(path string){
 }
 
 //创建数据集
-func DataSet(path string){
-	path = "/dataset"+ path
+func DataSet(path ,uid string){
+	path = path+"/dataset"+ uid
 	os.MkdirAll(path,os.ModePerm)
 }
+

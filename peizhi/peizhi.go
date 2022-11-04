@@ -1,5 +1,0 @@
-package peizhi
-
-func main() {
-
-}

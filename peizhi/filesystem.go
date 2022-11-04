@@ -43,7 +43,7 @@ func Init(dataFile string) {
 	path := Juicefs.Path
 	fmt.Println(path)
 	dir, err := ioutil.ReadDir(path)
-	if len(dir) == 0 {
+	if len(dir) != 0 {
 		fmt.Println("文件夹已被占用")
 		os.Exit(3)
 	}

@@ -7,10 +7,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
-	"path"
-	"runtime"
 	"strconv"
-	"syscall"
 )
 
 var Juicefs *juicefs
@@ -28,7 +25,6 @@ type juicefs struct {
 }
 
 func Init(dataFile string) {
-	// 解决相对路经下获取不了配置文件问题
 	yamlFile, err := ioutil.ReadFile(dataFile)
 	if err != nil {
 		log.Printf("yamlFile.Get err   #%v ", err)

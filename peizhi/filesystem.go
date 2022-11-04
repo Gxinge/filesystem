@@ -67,7 +67,7 @@ func Init(dataFile string) {
 
 	//4.挂载客户端
 	var commond = "juicefs mount " + "--log " + Juicefs.Log + " --cache-dir " + cachedir + " --cache-size " + strconv.Itoa(cachesize) + " " + url + path
-	commands := exec.Command(commond)
+	commands := exec.Command("juicefs", "mount", "--log", Juicefs.Log, "--cache-dir", cachedir, "--cache-size", strconv.Itoa(cachesize), url, path)
 	output, err := commands.CombinedOutput()
 	if err != nil {
 		fmt.Printf("combined out:\n%s\n", string(output))

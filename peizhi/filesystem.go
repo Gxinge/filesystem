@@ -29,13 +29,7 @@ type juicefs struct {
 
 func Init(dataFile string) {
 	// 解决相对路经下获取不了配置文件问题
-	_, filename, _, _ := runtime.Caller(0)
-	filePath := path.Join(path.Dir(filename), dataFile)
-	_, err := os.Stat(filePath)
-	if err != nil {
-		log.Printf("config file path %s not exist", filePath)
-	}
-	yamlFile, err := ioutil.ReadFile(filePath)
+	yamlFile, err := ioutil.ReadFile(dataFile)
 	if err != nil {
 		log.Printf("yamlFile.Get err   #%v ", err)
 	}

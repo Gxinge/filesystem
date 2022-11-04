@@ -60,9 +60,9 @@ func Init(dataFile string) {
 	//3.判断是测试环境还是演示环境
 	var url string
 	if Juicefs.TestOrDemo == "test" {
-		url = "tikv://10.101.12.93:2379/test "
+		url = "tikv://10.101.12.93:2379/test"
 	} else {
-		url = "tikv://10.101.12.93:2379/jfsdemo "
+		url = "tikv://10.101.12.93:2379/jfsdemo"
 	}
 
 	//4.挂载客户端

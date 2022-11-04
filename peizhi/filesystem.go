@@ -42,9 +42,9 @@ func Init(dataFile string) {
 	//1.判断路径是否合法
 	path := Juicefs.Path
 	fmt.Println(path)
-	_, err1 := os.Stat(path)
-	if err1 == nil {
-		fmt.Println("路径不合法")
+	dir, err := ioutil.ReadDir(path)
+	if len(dir) == 0 {
+		fmt.Println("文件夹已被占用")
 		os.Exit(3)
 	}
 

@@ -62,7 +62,7 @@ func Init(dataFile string) {
 	if Juicefs.TestOrDemo == "test" {
 		url = "tikv://10.101.12.93:2379/test"
 	} else {
-		url = "tikv://10.101.12.93:2379/jfsdemo"
+		url = "tikv://10.101.12.93:2379/prod"
 	}
 
 	//4.挂载客户端
